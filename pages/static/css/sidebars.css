@@ -1,3 +1,8 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
 body {
   /* min-height: 100vh; */
   /* min-height: -webkit-fill-available; */
@@ -7,7 +12,7 @@ html {
   height: -webkit-fill-available;
 }
 
-main {
+aside {
    display: flex;
   flex-wrap: nowrap;
    height: 100vh;
@@ -37,6 +42,15 @@ main {
 
 .nav-flush .nav-link {
   border-radius: 0;
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #E08B44;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 .btn-toggle {

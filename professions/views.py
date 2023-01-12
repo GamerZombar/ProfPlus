@@ -4,11 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 
-from professions.models import Profession
+from professions.models import Profession, Blog
 
 
-class ProfessionView(View):
-    '''вывод данных профессий'''
-    def get(self, request):
-        professions = Profession.objects.all()
-        return render(request, 'professions/index.html', {'profession_list': professions})
+

@@ -1,11 +1,19 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 
-from professions.models import Profession
+from professions.models import *
 
 
 # Register your models here.
 
 @admin.register(Profession)
-class TeacherAdmin(ModelAdmin):
+class ProfessionAdmin(ModelAdmin):
     pass
+
+
+@admin.register(Blog)
+class BlogAdmin(ModelAdmin):
+    pass
+
+
+

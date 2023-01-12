@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}ProfPlus{% endblock title %}</title>
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    {% block stylesheet %}
+
+    {% endblock stylesheet %}
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
@@ -25,12 +33,12 @@
 </head>
 
 
-<body class="d-flex flex-column h-100 min-vh-100 bg-dark">
+<body class="d-flex flex-column min-vh-100 bg-dark">
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="profplus" viewBox="0 0 738 706">
+  <symbol id="profplus" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 900 900">
     <title>ProfPlus</title>
-    <path stroke="#000" stroke-linecap="round" stroke-width="80" d="M314 47v619M40.5 359.5h464m-68-318C522 37 682.5 41.5 696 168c12.616 118.217-73 157-73 157"/>
+    <path fill="#e18c44" d="M419.5-.5h60c153.945 14.59 272.445 86.59 355.5 216 37.572 62.967 59.072 130.967 64.5 204v60c-14.588 153.944-86.588 272.444-216 355.5-62.965 37.572-130.965 59.072-204 64.5h-60c-153.945-14.59-272.445-86.59-355.5-216-37.572-62.967-59.072-130.967-64.5-204v-60C11.96 279.71 73.96 167.876 185.5 84c70.134-49.658 148.134-77.825 234-84.5Z" opacity=".997"/><path fill="#fefefe" d="M515.5 150.5c41.819-1.079 83.152 2.755 124 11.5 34.972 8.559 64.806 25.726 89.5 51.5 26.995 34.295 37.662 73.295 32 117-5.158 53.085-29.991 93.918-74.5 122.5-18.008 10.494-34.175 8.328-48.5-6.5-9.634-16.031-8.467-31.198 3.5-45.5 30.362-15.215 47.529-39.715 51.5-73.5 7.656-44.207-8.844-75.041-49.5-92.5-26.489-9.416-53.822-14.749-82-16a1310.34 1310.34 0 0 0-62 0c-21.017-7.698-29.183-22.532-24.5-44.5 8.069-17.119 21.569-25.119 40.5-24ZM567.5 488.5h-131v231c-3.812 17.81-14.812 27.477-33 29-17.411-1.285-28.578-10.285-33.5-27-.5-77.666-.667-155.333-.5-233-69.001.167-138.001 0-207-.5-20.711-8.59-28.211-23.756-22.5-45.5 4.462-10.151 11.962-16.984 22.5-20.5 68.999-.5 137.999-.667 207-.5-.167-79.334 0-158.667.5-238 6.965-21.236 21.465-29.736 43.5-25.5 12.267 4.335 20.1 12.835 23.5 25.5.5 79.333.667 158.666.5 238 45.001-.167 90.001 0 135 .5 19.016 6.354 27.516 19.521 25.5 39.5-4.079 15.914-14.246 24.914-30.5 27Z"/><path fill="#f5d8c0" d="M567.5 488.5a4224.716 4224.716 0 0 1-130 1c.333 76.835-.001 153.502-1 230v-231h131Z"/>
   </symbol>
   <symbol id="home" viewBox="0 0 16 16">
     <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
@@ -88,51 +96,51 @@
 
 <header class="d-flex flex-wrap justify-content-center p-3 py-3 border-bottom border-secondary bg-dark">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#profplus"></use></svg>
+      <svg class="bi me-2" width="48" height="48"><use xlink:href="#profplus"></use></svg>
       <span class="fs-4">ProfPlus</span>
     </a>
 
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-      </ul>
+{#      <ul class="nav nav-pills">#}
+{#        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>#}
+{#        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>#}
+{#        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>#}
+{#        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>#}
+{#        <li class="nav-item"><a href="#" class="nav-link">About</a></li>#}
+{#      </ul>#}
     </header>
 
-<div class="d-flex h-100 min-vh-100">
-<aside class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+<div class="d-flex min-vh-100">
+<aside class="d-flex flex-column flex-shrink-0 p-3 text-white border-end border-secondary bg-dark" style="width: 280px;">
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
+          <svg class="bi me-2" width="24" height="24"><use xlink:href="#home"></use></svg>
+          Главная
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Dashboard
+          <svg class="bi me-2" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
+          Востребованность
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
+          <svg class="bi me-2" width="24" height="24"><use xlink:href="#geo-fill"></use></svg>
+          География
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Products
+          <svg class="bi me-2" width="24" height="24"><use xlink:href="#chat-quote-fill"></use></svg>
+          Навыки
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Customers
+          <svg class="bi me-2" width="24" height="24"><use xlink:href="#tools"></use></svg>
+          Последние вакансии
         </a>
       </li>
     </ul>
@@ -169,8 +177,8 @@
     <div class="row">
       <div class="col mb-3">
         <a class="d-inline-flex align-items-center mb-2 text-white text-decoration-none" href="/" aria-label="ProfPlus">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2" viewBox="0 0 118 94" role="img"><title>ProfPlus</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
-          <span class="fs-5">ProfPlus</span>
+          <svg class="bi me-2" width="32" height="32"><use xlink:href="#profplus"></use></svg>
+            <span class="fs-5">ProfPlus</span>
         </a>
           <p class="font-monospace px-2">by Романов Вадим Юрьевич | РИ-210950</p>
       </div>
