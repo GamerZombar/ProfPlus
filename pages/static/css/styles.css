@@ -1,0 +1,35 @@
+
+.title {
+    height: 500px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(255, 255, 255, 0.8)
+    );
+}
+
+/*.title * {*/
+/*    text-shadow: white 0 0 10px;*/
+/*}*/
+
+.title-bg {
+  /*opacity: 0.6;*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.card {
+    font-size: 18px;
+}
+
+section{
+    width: 0;
+    min-width: 100%;
+}
