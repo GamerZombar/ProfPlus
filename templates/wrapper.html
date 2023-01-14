@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}ProfPlus{% endblock title %}</title>
 
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
 
     {% block stylesheet %}
 
     {% endblock stylesheet %}
 
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
     <link rel="stylesheet" href={% static 'css/sidebars.css' %}>
@@ -110,54 +116,54 @@
     </header>
 
 <div class="d-flex min-vh-100">
-<aside class="d-flex flex-column flex-shrink-0 p-3 text-white border-end border-secondary bg-dark" style="width: 280px;">
+<aside class="d-flex flex-column flex-shrink-0 p-3 text-white border-end border-secondary bg-dark mh-100" style="width: 280px;">
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="/" class="nav-link text-white" aria-current="page">
           <svg class="bi me-2" width="24" height="24"><use xlink:href="#home"></use></svg>
           Главная
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link text-white">
+      <li class="nav-item">
+        <a href="/demand" class="nav-link text-white">
           <svg class="bi me-2" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
           Востребованность
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link text-white">
+      <li class="nav-item">
+        <a href="/geography" class="nav-link text-white">
           <svg class="bi me-2" width="24" height="24"><use xlink:href="#geo-fill"></use></svg>
           География
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link text-white">
+      <li class="nav-item">
+        <a href="/skills" class="nav-link text-white">
           <svg class="bi me-2" width="24" height="24"><use xlink:href="#chat-quote-fill"></use></svg>
           Навыки
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link text-white">
+      <li class="nav-item">
+        <a href="/recent" class="nav-link text-white">
           <svg class="bi me-2" width="24" height="24"><use xlink:href="#tools"></use></svg>
           Последние вакансии
         </a>
       </li>
     </ul>
     <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://avatars.githubusercontent.com/u/58142149" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>GamerZombar</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
+{#    <div class="dropdown">#}
+{#      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#        <img src="https://avatars.githubusercontent.com/u/58142149" alt="" width="32" height="32" class="rounded-circle me-2">#}
+{#        <strong>GamerZombar</strong>#}
+{#      </a>#}
+{#      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">#}
+{#        <li><a class="dropdown-item" href="#">New project...</a></li>#}
+{#        <li><a class="dropdown-item" href="#">Settings</a></li>#}
+{#        <li><a class="dropdown-item" href="#">Profile</a></li>#}
+{#        <li><hr class="dropdown-divider"></li>#}
+{#        <li><a class="dropdown-item" href="#">Sign out</a></li>#}
+{#      </ul>#}
+{#    </div>#}
   </aside>
 
 
@@ -185,7 +191,7 @@
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
         <h5>Links</h5>
         <ul class="list-group list-group-horizontal-md">
-          <li class="list-group-item"><a href="/">Home</a></li>
+{#          <li class="list-group-item"><a href="/">Home</a></li>#}
           <li class="list-group-item"><a href="https://github.com/GamerZombar/ProfPlus">GitHub</a></li>
         </ul>
       </div>
@@ -193,8 +199,31 @@
   </div>
 </footer>
 
+
+
 <script src={% static 'js/bootstrap.bundle.js' %}></script>
 
 <script src={% static 'js/sidebars.js' %}></script>
+<script>
+    $(function() {
+ var url = window.location.href.substr( window.location.href.lastIndexOf( '/' ));
+ $( '.nav-link' ).each( function () {
+ if( $( this ).attr( 'href' ) === url || $( this ).attr( 'href' ) === '' ) {
+ $( this ).addClass( 'active' );
+ }
+ });
+});
+</script>
+
+<script>
+
+    $.fn.toHtml=function(){
+       return $(this).html($(this).text())
+    };
+    $('*[id*=description]:visible').each( function () {
+        $( this ).toHtml()
+    })
+
+</script>
 </body>
 </html>

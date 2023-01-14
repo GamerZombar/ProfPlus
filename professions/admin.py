@@ -11,9 +11,5 @@ class ProfessionAdmin(ModelAdmin):
     pass
 
 
-@admin.register(Blog)
-class BlogAdmin(ModelAdmin):
-    pass
-
 
 
